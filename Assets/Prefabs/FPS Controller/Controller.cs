@@ -165,4 +165,20 @@ public class Controller : MonoBehaviour
         }
 
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("LockPlayerMove"))
+        {
+            LockControl = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("LockPlayerMove"))
+        {
+            LockControl = false;
+        }
+    }
 }
